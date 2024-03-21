@@ -1,0 +1,12 @@
+{
+  "name": "pyterm",
+  "version": "1.0",
+  "arch": "all",
+  "maintainer": "Subuntu X <subuntux@github.com>",
+  "description": "Termux Menu",
+  "homepage": "https://github.com/subuntux/term-master",
+  "depends": ["python3"],
+  "files": {
+    "main.py": "/data/data/com.termux/files/usr/bin/pyterm"
+  }
+}
