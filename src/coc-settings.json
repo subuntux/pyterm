@@ -1,0 +1,48 @@
+{
+  "languageserver": {
+    "sh": {
+      "enable": true
+    },
+    "python": {
+      "enable": true
+    },
+    "javascript": {
+      "enable": true
+    }
+  },
+  "coc.preferences": {
+    "suggest.autoTrigger": "true",
+    "suggest.enablePreview": "true",
+    "suggest.acceptSuggestionOnCommitCharacter": true,
+    "suggest.acceptSuggestionOnEnter": "true",
+    "suggest.completeOpt": ["menu", "noinsert"],
+    "completion.enableAutoImport": true,
+    "coc.preferences.formatOnType": true,
+    "coc.preferences.formatOnSaveFiletypes": ["python", "sh"],
+    "coc.preferences.formatOnSave": true,
+    "coc.preferences.snippetSuggestions": "true",
+    "coc.preferences.insertModeKeybindings": true,
+    "coc.preferences.enableNeosnippet": true,
+    "coc.preferences.renameOnMove": true,
+    "coc.preferences.jediEnabled": false,
+    "coc.preferences.enablePythonJedi": false,
+    "coc.preferences.python.jediEnabled": false,
+    "coc.preferences.python.analysis.typeshedPaths": ["typeshed"],
+    "coc.preferences.python.analysis.autoSearchPaths": true,
+    "coc.preferences.python.analysis.extraPaths": [],
+    "coc.preferences.python.analysis.useLibraryCodeForTypes": false,
+    "coc.preferences.python.linting.enabled": true,
+    "coc.preferences.python.linting.flake8Enabled": true,
+    "coc.preferences.python.linting.pylintEnabled": true,
+    "coc.preferences.python.linting.mypyEnabled": true,
+    "coc.preferences.python.linting.flake8Args": ["--max-line-length=88"],
+    "coc.preferences.python.linting.pylintArgs": ["--max-line-length=88"],
+    "coc.preferences.python.linting.mypyArgs": [],
+    "coc.preferences.python.linting.banditEnabled": true,
+    "coc.preferences.python.linting.banditArgs": [],
+    "coc.preferences.python.analysis.autoComplete.extraPaths": [],
+    "coc.preferences.python.analysis.autoComplete.typeshedPaths": [],
+    "coc.preferences.python.analysis.autoComplete.autoImportCompletions": true,
+    "coc.preferences.python.analysis.autoComplete.typeshedPaths": []
+  }
+}

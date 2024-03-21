@@ -1,6 +1,6 @@
 {
   "name": "pyterm",
-  "version": "1.1",
+  "version": "1.2",
   "arch": "all",
   "maintainer": "Subuntu X <subuntux@github.com>",
   "description": "Termux Menu",
@@ -10,6 +10,9 @@
     "main.py": "/data/data/com.termux/files/usr/bin/pyterm",
     "src/dl.sh": "/data/data/com.termux/files/usr/shared/pyterm/dl.sh",
     "src/exist.sh": "/data/data/com.termux/files/usr/shared/pyterm/exist.sh",
-    "src/adb": "/data/data/com.termux/files/usr/shared/pyterm/adb"
+    "src/adb": "/data/data/com.termux/files/usr/shared/pyterm/adb",
+    "src/main": "/data/data/com.termux/files/usr/shared/pyterm/main",
+    "src/init.vim": "/data/data/com.termux/files/usr/shared/pyterm/init.vim",
+    "src/coc-settings.json": "/data/data/com.termux/files/usr/shared/pyterm/coc-settings.json"
   }
 }

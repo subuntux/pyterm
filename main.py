@@ -24,6 +24,7 @@ def main_menu():
     print("[2]-Termux Menu")
     print("[3]-X11 Menu")
     print("[4]-API Menu")
+    print("[5]-Special Menu")
     print("[0]-Exit")
     
 def get_choice():
@@ -78,6 +79,7 @@ def setup():
         print("[*] Install wget")
         print("")
         subprocess.run(["pkg", "install", "wget", "which", "-y"])
+        subprocess.run(["npm", "install", "readline-sync"])
         print("")
         print("[*] Succesfull")
         print("[*] Finish")
@@ -264,7 +266,6 @@ def api_menu():
             
 def adb_shell():
     while True:
-        subprocess.run(["clear"])
         print(banner)
         print("ADB Menu (Shizuku needed)")
         print("[1]-Create Cache")
@@ -286,6 +287,9 @@ def adb_shell():
         else:
             print("Invalid Option")
             
+def special_menu():
+    subprocess.run(["/data/data/com.termux/files/usr/shared/pyterm/main"])
+            
 while True:
     main_menu()
     choice = get_choice()
@@ -300,5 +304,7 @@ while True:
         x11_menu()
     elif choice == '4':
         api_menu()
+    elif choice == '5':
+        special_menu()
     else:
         print("Invalid Option")
