@@ -99,8 +99,8 @@ def termux_menu():
         print("[5]-Change Repo")
         print("[6]-Setup Storage")
         print("[7]-Update")
+        print("[8]-Use adb")
         print("[0]-Exit")
-        print("[99]-Back")
         
         choice = input("select-| ").lower()
         
@@ -154,9 +154,8 @@ def termux_menu():
         elif choice == '7':
             subprocess.run(["pkg", "update", "-y"])
             subprocess.run(["pkg", "upgrade", "-y"])
-        elif choice == '99':
-            break
-            main_menu()
+        elif choice == '8':
+            adb_shell()
         else:
             print("Invalid Option")
         
@@ -173,7 +172,6 @@ def x11_menu():
         print("[6]-Install VNC Viewer")
         print("[7]-Install X11 APK")
         print("[0]-Exit")
-        print("[99]-Back")
         
         choice = input("select-| ").lower()
         
@@ -235,9 +233,6 @@ def x11_menu():
             print("[*] Load Content")
             subprocess.run(["termux-open-url", "https://github.com/termux/termux-x11/actions/workflows/debug_build.yml"])
             print("[*] Connected")
-        elif choice == '99':
-            break
-            main_menu()
         else:
             print("Invalid Option")
             
@@ -249,7 +244,6 @@ def api_menu():
         print("[1]-Install API APK")
         print("[2]-Install API Plugin")
         print("[0]-Exit")
-        print("[99]-Back")
         
         choice = input("select-| ").lower()
         
@@ -265,9 +259,30 @@ def api_menu():
             print("[*] Install API Plugin")
             print("")
             subprocess.run(["pkg", "install", "termux-api", "-y"])
-        elif choice == '99':
+        else:
+            print("Invalid Option")
+            
+def adb_shell():
+    while True:
+        subprocess.run(["clear"])
+        print(banner)
+        print("ADB Menu (Shizuku needed)")
+        print("[1]-Create Cache")
+        print("[2]-Use Existing rish")
+        print("[3]-Download Rish")
+        print("[0]-Exit")
+        
+        choice = input("select-| ").lower()
+        
+        if choice == '0':
             break
-            main_menu()
+        elif choice == '1':
+            os.chdir(os.getenv("HOME"))
+            subprocess.run(["mkdir", ".cache/adb"])
+        elif choice == '2':
+            subprocess.run(["bash", "/data/data/com.termux/files/usr/shared/pyterm/exist.sh"])
+        elif choice == '3':
+            subprocess.run(["bash", "/data/data/com.termux/files/usr/shared/pyterm/dl.sh"])
         else:
             print("Invalid Option")
             

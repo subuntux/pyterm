@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Überprüfen, ob das erste Argument 'shell' ist
+if [[ "$1" == "shell" ]]; then
+  # Entfernen des 'shell'-Arguments von der Argumentliste
+  shift
+  # Starten von 'rish' und Ausführen der weiteren Argumente darin
+  if [ "$#" -eq 0 ]; then
+    # Wenn keine weiteren Argumente vorhanden sind, starte nur 'rish'
+    bash $HOME/.cache/adb/rish
+  else
+    # Wenn Argumente vorhanden sind, führe sie in 'rish' aus
+    bash $HOME/.cache/adb/rish -c "$*"
+  fi
+else
+  # Leitet alle anderen Befehle an das echte 'adb'-Werkzeug weiter, falls vorhanden
+  pyterm
+fi
