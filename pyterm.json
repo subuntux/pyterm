@@ -1,18 +1,21 @@
 {
   "name": "pyterm",
-  "version": "1.2",
-  "arch": "all",
+  "version": "1.3",
+  "arch": "arm",
   "maintainer": "Subuntu X <subuntux@github.com>",
   "description": "Termux Menu",
   "homepage": "https://github.com/subuntux/term-master",
-  "depends": ["python3"],
+  "depends": ["python3", "sqlite"],
   "files": {
-    "main.py": "/data/data/com.termux/files/usr/bin/pyterm",
+    "user.py": "/data/data/com.termux/files/usr/bin/pyterm",
+    "src/main.py": "/data/data/com.termux/files/usr/shared/pyterm/main.py",
     "src/dl.sh": "/data/data/com.termux/files/usr/shared/pyterm/dl.sh",
     "src/exist.sh": "/data/data/com.termux/files/usr/shared/pyterm/exist.sh",
     "src/adb": "/data/data/com.termux/files/usr/shared/pyterm/adb",
     "src/main": "/data/data/com.termux/files/usr/shared/pyterm/main",
     "src/init.vim": "/data/data/com.termux/files/usr/shared/pyterm/init.vim",
-    "src/coc-settings.json": "/data/data/com.termux/files/usr/shared/pyterm/coc-settings.json"
+    "src/coc-settings.json": "/data/data/com.termux/files/usr/shared/pyterm/coc-settings.json",
+    "db/user.db": "/data/data/com.termux/files/usr/shared/pyterm/db/user.db",
+    "src/xtra.py": "/data/data/com.termux/files/usr/shared/pyterm/xtra.py"
   }
 }

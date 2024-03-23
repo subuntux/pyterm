@@ -4,16 +4,13 @@ import subprocess
 import os
 
 banner = """ 
-
- _________  _______   ________  _____ ______      
-|\___   ___\\  ___ \ |\   __  \|\   _ \  _   \    
-\|___ \  \_\ \   __/|\ \  \|\  \ \  \\\__\ \  \   
-     \ \  \ \ \  \_|/_\ \   _  _\ \  \\|__| \  \  
-      \ \  \ \ \  \_|\ \ \  \\  \\ \  \    \ \  \ 
-       \ \__\ \ \_______\ \__\\ _\\ \__\    \ \__\
-        \|__|  \|_______|\|__|\|__|\|__|     \|__|
+   ___       __              
+  / _ \__ __/ /____ ______ _ 
+ / ___/ // / __/ -_) __/  ' \
+/_/   \_, /\__/\__/_/ /_/_/_/
+     /___/                   
 [Term Master.py, (c) by subuntux]
-[v.1.0]
+[v.1.3]
 """
 
 def main_menu():
@@ -25,6 +22,7 @@ def main_menu():
     print("[3]-X11 Menu")
     print("[4]-API Menu")
     print("[5]-Special Menu")
+    print("[6]-Xtra Menu")
     print("[0]-Exit")
     
 def get_choice():
@@ -67,10 +65,6 @@ def setup():
         subprocess.run(["pkg", "install", "git", "gh", "-y"])
         print("")
         print("[*] Succesfull")
-        print("[*] Install proot-distro")
-        print("")
-        subprocess.run(["pkg", "install", "proot-distro", "-y"])
-        print("[*] Succesfull")
         print("[*] Install zshell")
         print("")
         subprocess.run(["pkg", "install", "zsh", "-y"])
@@ -79,7 +73,6 @@ def setup():
         print("[*] Install wget")
         print("")
         subprocess.run(["pkg", "install", "wget", "which", "-y"])
-        subprocess.run(["npm", "install", "readline-sync"])
         print("")
         print("[*] Succesfull")
         print("[*] Finish")
@@ -266,6 +259,7 @@ def api_menu():
             
 def adb_shell():
     while True:
+        subprocess.run(["clear"])
         print(banner)
         print("ADB Menu (Shizuku needed)")
         print("[1]-Create Cache")
@@ -306,5 +300,7 @@ while True:
         api_menu()
     elif choice == '5':
         special_menu()
+    elif choice == '6':
+        subprocess.run(["python3", "/data/data/com.termux/files/usr/shared/pyterm/xtra.py"])
     else:
         print("Invalid Option")
