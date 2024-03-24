@@ -4,6 +4,7 @@ import sqlite3
 import hashlib
 import time
 import subprocess
+import os
 
 # Verbindung zur Datenbank herstellen
 conn = sqlite3.connect('/data/data/com.termux/files/usr/shared/pyterm/db/user.db')
@@ -39,6 +40,8 @@ def login_user():
         c.execute("UPDATE users SET last_login = ? WHERE username = ?", (current_time, username))
         conn.commit()
         print("Login successful!")
+        os.system("cp /data/data/com.termux/files/usr/shared/pyterm/login /data/data/com.termux/files/usr/bin/login-py")
+        os.system('echo "login-py" >> ~/.bashrc')
         # Python-Datei ausführen
         subprocess.run(["python3", "/data/data/com.termux/files/usr/shared/pyterm/main.py"])
     else:
